@@ -54,5 +54,7 @@ def start_game(message):
 bot.polling()
 # Написать функцию лечения
 
+def heal(character, amount, send_message_func):
+    pass
 # Написать функцию добавления спосностей герою "abilities": []
 
