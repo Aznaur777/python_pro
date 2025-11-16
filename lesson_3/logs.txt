@@ -1,0 +1,9 @@
+Archer наносит 7 урона Goblin!
+У Goblin осталось 53 HP.
+Goblin наносит 3 урона Archer!
+У Archer осталось 97 HP.
+Игра началась!
+Archer наносит 7 урона Goblin!
+У Goblin осталось 53 HP.
+Goblin наносит 3 урона Archer!
+У Archer осталось 97 HP.
