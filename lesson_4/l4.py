@@ -42,12 +42,25 @@ def get_my_wish_list_handler(message):
 
         bot.send_message(message.chat.id, st)
 
-#добавить функцию просмотр листа друга, пользователь пишет /get_my_friends_list username_друга
+#1. добавить функцию просмотр листа друга, пользователь пишет /get_my_friends_list username_друга
 #бот отвечает списком желаний друга
+#2. функция удалить какуюнибудь мечту из своего списка по номеру /delete_wish номер_желания
+#3. удалить аккаунт из бота /delete_account
 
+# /add_wish    laptop with rtx 3060  
 @bot.message_handler(commands=["add_wish"])
 def add_wish_handler(message):
-    pass
+    user_name = message.from_user.username
+
+    wish = message.text.replace("/add_wish", "").strip()
+    if wish == "":
+        bot.send_message(message.chat.id, "Пожалуйста, укажите желание после команды /add_wish")
+        return
+
+    wishlist[user_name].append(wish)
+    with open(list_path, "w") as file:
+        json.dump(wishlist, file)
+    bot.send_message(message.chat.id, f"Желание '{wish}' добавлено в твой список.")
 
 start_bot()
 bot.polling()
